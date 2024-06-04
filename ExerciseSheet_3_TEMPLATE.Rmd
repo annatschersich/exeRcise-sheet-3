@@ -5,6 +5,7 @@ author: "Anna Tschersich(Martrikelnummer), Name (Martrikelnummer), ..."
 date: "`r Sys.Date()`"
 output: distill::distill_article
 ---
+
 ```{r}
 library(dplyr)
 library(knitr)
@@ -12,34 +13,28 @@ library(kableExtra)
 library(ggplot2)
 ```
 
-
-## Exercise 1: Initializing git 
+## Exercise 1: Initializing git
 
 ### Exercise 1d:
 
 **Strengths:**
 
-a) Git is very fast, efficient and powerful.
+-   Git is very fast, efficient and powerful.
 
-b) Git is very helpful working together on a project by tracking all
-changes in a project, aiding in teamwork and ensuring transparency.
+-   Git is very helpful working together on a project by tracking all changes in a project, aiding in teamwork and ensuring transparency.
 
 **Weaknesses:**
 
-a) For beginners, the functionality of git can be very challenging .
+-   For beginners, the functionality of git can be very challenging .
 
-b) In very large teams, coordination becomes crucial to prevent loss of
-work and conflicts when using Git. 
-
-
+-   In very large teams, coordination becomes crucial to prevent loss of work and conflicts when using Git.
 
 ## Exercise 2: Putting your Repository on GitHub
 
-
-
-## Exercise 3: Baby-Names in Munich 
+## Exercise 3: Baby-Names in Munich
 
 ### Exercise 3b:
+
 ```{r}
 babynames_2022 <- read.csv("/Users/anna/2024-exeRcise-sheet-3/open_data_portal_2022.csv")
 babynames_2023 <- read.csv("/Users/anna/2024-exeRcise-sheet-3/vornamen-muenchen-2023.csv")
@@ -56,6 +51,7 @@ babynames_2023$Anzahl <- as.numeric(babynames_2023$Anzahl)
 ```
 
 ### Exercise 3c:
+
 ```{r}
 sum(babynames_2022$Anzahl, na.rm = TRUE) #answer: 9899
 sum(babynames_2023$Anzahl, na.rm = TRUE) #answer: 9277
@@ -64,17 +60,20 @@ sum(babynames_2023$Anzahl, na.rm = TRUE) #answer: 9277
 ```
 
 ### Exercise 3d:
+
 ```{r}
 babynames_2022 <- babynames_2022 %>% mutate(year = 2022)
 babynames_2023 <- babynames_2023 %>% mutate(year = 2023)
 ```
 
 ### Exercise 3e:
+
 ```{r}
 combined_babynames <- bind_rows(babynames_2022, babynames_2023)
 ```
 
 ### Exercise 3f:
+
 ```{r}
 popular_babynames <- combined_babynames %>%
   group_by(Vorname) %>%
@@ -95,22 +94,25 @@ table_top_babynames <- top_10_names %>%
 print(table_top_babynames)
 ```
 
-## Exercise 4: Open Analysis 
+## Exercise 4: Open Analysis
 
-### Exercise 4a: 
+### Exercise 4a:
+
 I chose the dataset "Number of deaths due to tetanus".
 
 ### Exercise 4c:
-- Dataset Name: "Number of deaths due to tetanus"
-- Link: https://github.com/owid/owid-datasets/blob/master/datasets/Number%20of%20deaths%20due%20to%20tetanus/Number%20of%20deaths%20due%20to%20tetanus.csv 
+
+-   Dataset Name: "Number of deaths due to tetanus"
+-   Link: <https://github.com/owid/owid-datasets/blob/master/datasets/Number%20of%20deaths%20due%20to%20tetanus/Number%20of%20deaths%20due%20to%20tetanus.csv>
 
 ### Exercise 4d:
 
 **Question:** Which year had the highest number of deaths due to tetanus?
 
-I think answering this question is interesting and important to see how much medical progress has been made in tetanus research over the years. 
+I think answering this question is interesting and important to see how much medical progress has been made in tetanus research over the years.
 
 ### Exercise 4e:
+
 ```{r}
 deaths_tetanus <- read.csv("/Users/anna/2024-exeRcise-sheet-3/Number of deaths due to tetanus.csv")
 
@@ -125,6 +127,7 @@ head(deaths_tetanus, n = 1)
 ```
 
 ### Exercise 4f:
+
 ```{r plot, fig.cap="the development of number of deaths due to tetanus over the years 1990 - 2016}
 ggplot(
   data = deaths_tetanus,
@@ -142,5 +145,4 @@ ggplot(
   theme_gray()
 ```
 
-**Short Interpretation:** 
-As the plot, Figure\@ref(fig:plot), shows that the number of deaths due to tetanus constantly decreased over the years 1990 - 2016. 
+**Short Interpretation:** As the plot, Figure\@ref(fig:plot), shows that the number of deaths due to tetanus constantly decreased over the years 1990 - 2016.
