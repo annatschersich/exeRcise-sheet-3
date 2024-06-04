@@ -125,7 +125,7 @@ head(deaths_tetanus, n = 1)
 ```
 
 ### Exercise 4f:
-```{r}
+```{r plot, fig.cap="the development of number of deaths due to tetanus over the years 1990 - 2016}
 ggplot(
   data = deaths_tetanus,
   mapping = aes(
@@ -141,8 +141,7 @@ ggplot(
   scale_x_continuous(breaks = seq(1990, 2016, by = 5)) 
 ```
 
-f)  Create a meaningful plot / figure with the dataset. Make sure to
-    provide a figure caption (via the chunk options / Rmarkdown) and
-    correctly label the figure.
+**Short Interpretation:** 
+As the plot, Figure\@ref(fig:plot), shows that the number of deaths due to tetanus constantly decreased over the years 1990 - 2016. 
 
 
