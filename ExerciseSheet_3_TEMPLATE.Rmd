@@ -109,8 +109,20 @@ I chose the dataset "Number of deaths due to tetanus".
 
 I think answering this question is interesting and important to see how much medical progress has been made in tetanus research over the years. 
 
+### Exercise 4e:
+```{r}
+deaths_tetanus <- read.csv("/Users/anna/2024-exeRcise-sheet-3/Number of deaths due to tetanus.csv")
 
-e)  Use R to answer your chosen question.
+deaths_tetanus <- deaths_tetanus %>%
+group_by(Year) %>%
+summarize(number_of_deaths_per_year = sum(Number.of.deaths.from.tetanus..GBD.2016.)) %>%
+arrange(desc(number_of_deaths_per_year))
+
+head(deaths_tetanus, n = 1) 
+
+# answer to my chosen question: in 1990 the number of deaths due to tetanus were the highest (1332303	deaths)
+```
+
 f)  Create a meaningful plot / figure with the dataset. Make sure to
     provide a figure caption (via the chunk options / Rmarkdown) and
     correctly label the figure.
