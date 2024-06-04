@@ -49,15 +49,15 @@ babynames_2023$Anzahl <- as.numeric(babynames_2023$Anzahl)
 # My solution is to change the types of the variable "Anzahl" in both datasets from character to numeric. Now the variable has the numerical datatype. Unfortunately all values that had text in it are now "NA" so the counts of some babynames got loss by changing the datatype. 
 ```
 
+### Exercise 3c:
+```{r}
+sum(babynames_2022$Anzahl, na.rm = TRUE) #answer: 9899
+sum(babynames_2023$Anzahl, na.rm = TRUE) #answer: 9277
 
-b)  Load the data for both years into R. Check the type of the count
-    variable ("Anzahl") and look into the data to determine why it is
-    not numeric? Fix the problem in an appropriate manner, it is OK if
-    some of the counts are inaccurate because of this. Explain your
-    solution and the repercussions.
+# if we compare both numbers (ignoring the NA`s) we can assume that we had a bigger babyboom in 2022 as more babies were born in this year. 
+```
 
-c)  Calculate the total number of babies born in Munich in 2022
-    and 2023. Which year had the bigger baby-boom?
+
 
 d)  Add a new column `year` to both datasets which holds the correct
     year for each.
