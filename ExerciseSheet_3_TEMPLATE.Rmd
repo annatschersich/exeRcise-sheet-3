@@ -5,6 +5,9 @@ author: "Anna Tschersich(Martrikelnummer), Name (Martrikelnummer), ..."
 date: "`r Sys.Date()`"
 output: distill::distill_article
 ---
+```{r}
+library(dplyr)
+```
 
 
 ## Exercise 1: Initializing git 
@@ -57,10 +60,13 @@ sum(babynames_2023$Anzahl, na.rm = TRUE) #answer: 9277
 # if we compare both numbers (ignoring the NA`s) we can assume that we had a bigger babyboom in 2022 as more babies were born in this year. 
 ```
 
+### Exercise 3d:
+```{r}
+babynames_2022 <- babynames_2022 %>% mutate(year = 2022)
+babynames_2023 <- babynames_2023 %>% mutate(year = 2023)
+```
 
 
-d)  Add a new column `year` to both datasets which holds the correct
-    year for each.
 
 e)  Combine both datasets into one using `bind_rows()`.
 
