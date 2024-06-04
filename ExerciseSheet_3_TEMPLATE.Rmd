@@ -138,10 +138,9 @@ ggplot(
     x = "Year (1990 - 2016)",
     y = "Number of deaths due to tetanus") +
   scale_y_continuous(trans = "log") +
-  scale_x_continuous(breaks = seq(1990, 2016, by = 5)) 
+  scale_x_continuous(breaks = seq(1990, 2016, by = 5)) +
+  theme_gray()
 ```
 
 **Short Interpretation:** 
 As the plot, Figure\@ref(fig:plot), shows that the number of deaths due to tetanus constantly decreased over the years 1990 - 2016. 
-
-
