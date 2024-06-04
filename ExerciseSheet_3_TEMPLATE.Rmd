@@ -7,6 +7,8 @@ output: distill::distill_article
 ---
 ```{r}
 library(dplyr)
+library(knitr)
+library(kableExtra)
 ```
 
 
@@ -79,12 +81,20 @@ popular_babynames <- combined_babynames %>%
   arrange(desc(Anzahl_gesamt))
 ```
 
- Print out the top 10 names in a nicely formatted table for both years. Include a table caption.
 ```{r}
-
+top_10_names <- head(popular_babynames, 10)
 ```
 
-## Exercise 4: Open Analysis (4 points)
+```{r}
+table_top_babynames <- top_10_names %>%
+  kbl(caption = "Top 10 Baby Names in Munich 2022/2023", label = "Table1") %>%
+  kable_classic() %>%
+  kable_styling(full_width = FALSE)
+
+print(table_top_babynames)
+```
+
+## Exercise 4: Open Analysis 
 
 This exercise is a bit more open-ended. You can choose any dataset from
 [Our World in Data](https://ourworldindata.org/) and analyze it, while
