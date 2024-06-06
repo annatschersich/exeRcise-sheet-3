@@ -63,7 +63,7 @@ babynames_2023$Anzahl <- as.numeric(babynames_2023$Anzahl)
 sum(babynames_2022$Anzahl, na.rm = TRUE) #answer: 9899
 sum(babynames_2023$Anzahl, na.rm = TRUE) #answer: 9277
 ```
-If we compare both numbers (ignoring the NA`s) we can assume that we had a bigger babyboom in 2022 as more babies were born in this year. 
+If we compare both numbers (ignoring the NA`s) we can assume that we had a bigger babyboom in 2022, as more babies were born in this year. 
 
 ### Exercise 3d:
 
@@ -88,12 +88,10 @@ popular_babynames <- combined_babynames %>%
 
 top_10_names <- head(popular_babynames, 10)
 
-table_top_babynames <- top_10_names %>%
+top_10_names %>%
   kbl(caption = "Top 10 Baby Names in Munich 2022/2023", label = "Table1") %>%
   kable_classic() %>%
   kable_styling(full_width = FALSE)
-
-print(table_top_babynames)
 ```
 
 ## Exercise 4: Open Analysis
@@ -124,13 +122,13 @@ summarize(number_of_deaths_per_year = sum(Number.of.deaths.from.tetanus..GBD.201
 arrange(desc(number_of_deaths_per_year))
 
 head(deaths_tetanus, n = 1) 
-
-# answer to my chosen question: in 1990 the number of deaths due to tetanus were the highest (1332303	deaths)
 ```
+**Answer to my chosen question:**
+In 1990 the number of deaths due to tetanus were the highest (1332303	deaths).
 
 ### Exercise 4f:
 
-```{r plot, fig.cap="the development of number of deaths due to tetanus over the years 1990 - 2016}
+```{r plot, fig.cap="the development of number of deaths due to tetanus over the years 1990 - 2016"}
 ggplot(
   data = deaths_tetanus,
   mapping = aes(
