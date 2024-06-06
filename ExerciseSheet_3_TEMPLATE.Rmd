@@ -25,11 +25,15 @@ library(ggplot2)
 
 **Weaknesses:**
 
--   For beginners, the functionality of git can be very challenging .
+-   For beginners, the functionality of git can be very challenging.
 
 -   In very large teams, coordination becomes crucial to prevent loss of work and conflicts when using Git.
 
 ## Exercise 2: Putting your Repository on GitHub
+
+### Exercise 2a: 
+
+Link to my repository: https://github.com/annatschersich/exeRcise-sheet-3
 
 ## Exercise 3: Baby-Names in Munich
 
@@ -38,6 +42,7 @@ library(ggplot2)
 ```{r}
 babynames_2022 <- read.csv("/Users/anna/2024-exeRcise-sheet-3/open_data_portal_2022.csv")
 #  “Datenquelle: dl-de/by-2-0: Landeshauptstadt München – opendata.muenchen.de“
+
 babynames_2023 <- read.csv("/Users/anna/2024-exeRcise-sheet-3/vornamen-muenchen-2023.csv")
 #  “Datenquelle: dl-de/by-2-0: Landeshauptstadt München – opendata.muenchen.de“
 
