@@ -52,7 +52,7 @@ typeof(babynames_2023$Anzahl) # Antwort: character
 babynames_2022$Anzahl <- as.numeric(babynames_2022$Anzahl)
 babynames_2023$Anzahl <- as.numeric(babynames_2023$Anzahl)
 
-# R doesnt interpret the varibale "Anzahl" as numeric, as there are some values that are not just numbers but also text (e.g.: "4 oder weniger" as a value). 
+# R doesnt interpret the variable "Anzahl" as numeric, as there are some values that are not just numbers but also text (e.g.: "4 oder weniger" as a value). 
 
 # My solution is to change the types of the variable "Anzahl" in both datasets from character to numeric. Now the variable has the numerical datatype. Unfortunately all values that had text in it are now "NA" so the counts of some babynames got loss by changing the datatype. 
 ```
@@ -62,9 +62,8 @@ babynames_2023$Anzahl <- as.numeric(babynames_2023$Anzahl)
 ```{r}
 sum(babynames_2022$Anzahl, na.rm = TRUE) #answer: 9899
 sum(babynames_2023$Anzahl, na.rm = TRUE) #answer: 9277
-
-# if we compare both numbers (ignoring the NA`s) we can assume that we had a bigger babyboom in 2022 as more babies were born in this year. 
 ```
+If we compare both numbers (ignoring the NA`s) we can assume that we had a bigger babyboom in 2022 as more babies were born in this year. 
 
 ### Exercise 3d:
 
@@ -86,13 +85,9 @@ popular_babynames <- combined_babynames %>%
   group_by(Vorname) %>%
   summarize(Anzahl_gesamt = sum(Anzahl, na.rm = TRUE)) %>%
   arrange(desc(Anzahl_gesamt))
-```
 
-```{r}
 top_10_names <- head(popular_babynames, 10)
-```
 
-```{r}
 table_top_babynames <- top_10_names %>%
   kbl(caption = "Top 10 Baby Names in Munich 2022/2023", label = "Table1") %>%
   kable_classic() %>%
