@@ -1,12 +1,12 @@
 ---
 title: "Exercise #3"
 subtitle: "Fortgeschrittene Statistische Software für NF"
-author: "Anna Tschersich(Martrikelnummer), Name (Martrikelnummer), ..."
+author: "Anna Tschersich(12584150), Victor Bayer Gutierrez(12759880), Leon Bonk(12137710)"
 date: "`r Sys.Date()`"
 output: distill::distill_article
 ---
 
-```{r}
+```{r include=FALSE}
 library(dplyr)
 library(knitr)
 library(kableExtra)
@@ -145,4 +145,4 @@ ggplot(
   theme_gray()
 ```
 
-**Short Interpretation:** As the plot, Figure\@ref(fig:plot), shows that the number of deaths due to tetanus constantly decreased over the years 1990 - 2016.
+**Short Interpretation:** As the plot, Figure \@ref(fig:plot), shows that the number of deaths due to tetanus constantly decreased over the years 1990 - 2016.
