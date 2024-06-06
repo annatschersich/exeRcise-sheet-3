@@ -37,7 +37,9 @@ library(ggplot2)
 
 ```{r}
 babynames_2022 <- read.csv("/Users/anna/2024-exeRcise-sheet-3/open_data_portal_2022.csv")
+#  “Datenquelle: dl-de/by-2-0: Landeshauptstadt München – opendata.muenchen.de“
 babynames_2023 <- read.csv("/Users/anna/2024-exeRcise-sheet-3/vornamen-muenchen-2023.csv")
+#  “Datenquelle: dl-de/by-2-0: Landeshauptstadt München – opendata.muenchen.de“
 
 typeof(babynames_2022$Anzahl) # Antwort: character
 typeof(babynames_2023$Anzahl) # Antwort: character 
